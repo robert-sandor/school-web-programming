@@ -1,0 +1,64 @@
+#gradient {
+    width: 15em;
+    height: 5em;
+
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+nav#wrap {
+    margin: auto;
+}
+
+nav#wrap ul {
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+nav#wrap ul a {
+    display: block;
+    color: #333333;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 3em;
+    padding: 0 2em;
+    font-family: "Source Code Pro Medium", Arial, serif;
+}
+
+nav#wrap ul li {
+    position: relative;
+    display: block;
+    width: 15em;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(220, 220, 220, 1), rgba(190, 190, 190, 1));
+}
+
+nav#wrap ul li:hover {
+    background: linear-gradient(rgba(200, 200, 200, 1), rgba(150, 150, 150, 1));
+}
+
+nav#wrap ul ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #ffffff;
+    padding: 0;
+}
+
+nav#wrap ul ul li {
+    float: none;
+    width: 15em;
+}
+
+nav#wrap ul ul a {
+    top: 0;
+    left: 100%;
+}
+
+nav#wrap ul li:hover > ul {
+    display: block
+}
