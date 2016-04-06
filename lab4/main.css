@@ -1,0 +1,41 @@
+.table1 {
+    display: block;
+    float: left;
+    border-collapse: collapse;
+    margin: 20px;
+    border: solid 1px red;
+}
+
+.table2 {
+    display: block;
+    float: left;
+    border-collapse: collapse;
+    margin: 20px;
+    border: solid 1px blue;
+}
+
+.table3 {
+    display: block;
+    float: left;
+    border-collapse: collapse;
+    margin: 20px;
+    border: solid 1px green;
+}
+
+.table-row:nth-child(odd) {
+    background-color: #AAAAFF;
+}
+
+.table-header {
+    padding: 5px 20px;
+    background-color: #FFAAAA;
+}
+
+.table-entry {
+    padding: 5px 20px;
+    font-family: "Source Code Pro", serif;
+}
+
+.number-field {
+    text-align: right;
+}

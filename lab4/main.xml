@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="main.xsl"?>
+<bibliography>
+    <entry>
+        <author>Beasley, Maurine H.</author>
+        <title>Roosevelt Eleanor</title>
+        <year>2001</year>
+        <other>World Book Online - www.worldbookonline.com</other>
+    </entry>
+    <entry>
+        <author>Garrison, David L.</author>
+        <title>Marine Biology</title>
+        <year>2001</year>
+        <other>World Book - CD</other>
+    </entry>
+    <entry>
+        <author>McGrath, William J.</author>
+        <title>Vienna</title>
+        <year>2002</year>
+        <other>Article - The World Book Encyclopedia</other>
+    </entry>
+    <entry>
+        <author>Gordon, Karen E.</author>
+        <title>World Grammar</title>
+        <year>2015</year>
+        <other>Book - New York : Cahill</other>
+    </entry>
+    <entry>
+        <author>McGrath, Adam J.</author>
+        <title>Berlin</title>
+        <year>2014</year>
+        <other>Article - www.wikipedia.org</other>
+    </entry>
+    <entry>
+        <author>Griffin, Peter C.</author>
+        <title>The Universe</title>
+        <year>2001</year>
+        <other>Book - Washington : Cahill</other>
+    </entry>
+</bibliography>
