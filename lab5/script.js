@@ -1,6 +1,19 @@
 function sortNumbers() {
     numbers = document.getElementById('tarea').value;
     numbers = numbers.split(' ');
+
+    ok = true;    
+    numbers.some(function (el){
+        if (isNaN(el)) {
+            alert('Please provide only numbers!');
+            ok = false;
+            return true;
+        }
+    });
+    
+    if (ok === false) {
+        return;
+    }
     
     numbers.sort(function (a, b) {
         return a-b;
