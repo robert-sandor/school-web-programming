@@ -9,8 +9,12 @@ function sortNumbers() {
     result = '<table border="1">';
     for (var i = 0; i < numbers.length; i = i + 5) {
         result += '<tr>'
-        for (var j = i; j < i + 5 && j < numbers.length; j++) {
-            result += '<td>' + numbers[j] + '</td>';
+        for (var j = i; j < i + 5; j++) {
+            if (j < numbers.length) {
+                result += '<td>' + numbers[j] + '</td>';
+            } else {
+                result += '<td></td>';
+            }
         }
         result += '</tr>';
     }
@@ -18,6 +22,4 @@ function sortNumbers() {
     
     resdiv = document.getElementById('resultingTable');
     resdiv.innerHTML = result;
-    
-    alert(numbers);
 }
