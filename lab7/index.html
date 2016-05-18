@@ -8,6 +8,30 @@
         <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" charset="utf-8"></script>
+
+        <script type="text/javascript">
+            function showCars(str) {
+                if (str == "") {
+                    document.getElementById('table-body').innerHTML = "";
+                    return;
+                }
+
+                var minrange = str.split('-')[0];
+                var maxrange = str.split('-')[1];
+
+                xmlhttp = new XMLHttpRequest();
+
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        console.log(xmlhttp.responseText);
+                        document.getElementById('table-body').innerHTML = xmlhttp.responseText;
+                    }
+                }
+
+                xmlhttp.open('GET', 'all.php?min=' + minrange + '&max=' + maxrange, true);
+                xmlhttp.send();
+            }
+        </script>
     </head>
     <body>
         <div class="container">
@@ -20,6 +44,18 @@
 
                 <p>
                     <a href="create.php" class="btn btn-success">Create</a>
+
+                    <div class="form-group">
+                        <label for="select-range">Select price range : </label>
+                        <select class="form-control" onchange="showCars(this.value)">
+                            <option value="">Select a range</option>
+                            <option value="0-9999999">All</option>
+                            <option value="0-1000">0 - 1000</option>
+                            <option value="1000-5000">1000 - 5000</option>
+                            <option value="5000-10000">5000 - 10000</option>
+                            <option value="10000-50000">10000 - 50000</option>
+                        </select>
+                    </div>
                 </p>
 
                 <table class="table table-striped table-bordered">
@@ -49,30 +85,8 @@
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <?php
-                            include 'database.php';
+                    <tbody id="table-body">
 
-                            $pdo = Database::connect();
-                            $sql = 'SELECT * FROM cars ORDER BY id DESC';
-                            foreach ($pdo->query($sql) as $row) {
-                                echo '<tr>';
-                                echo '<td>'.$row['model'].'</td>';
-                                echo '<td>'.$row['manufacturer'].'</td>';
-                                echo '<td>'.$row['power'].'</td>';
-                                echo '<td>'.$row['color'].'</td>';
-                                echo '<td>'.$row['age'].'</td>';
-                                echo '<td>'.$row['price'].'</td>';
-                                echo '<td>';
-                                echo '<a class="btn btn-sm btn-default" href="read.php?id='.$row['id'].'"><span class="glyphicon glyphicon-search"></span></a>';
-                                echo '<a class="btn btn-sm btn-success" href="update.php?id='.$row['id'].'"><span class="glyphicon glyphicon-repeat"></span></a>';
-                                echo '<a class="btn btn-sm btn-danger" href="delete.php?id='.$row['id'].'"><span class="glyphicon glyphicon-remove"></span></a>';
-                                echo '</td>';
-                                echo '</tr>';
-                            }
-
-                            Database::disconnect();
-                         ?>
                     </tbody>
                 </table>
 
